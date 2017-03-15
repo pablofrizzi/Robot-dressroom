@@ -1,37 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Javascript Essesntials - by Avelx</title>
-        <meta charset="UTF-8"/>
-    </head>
-    <body>
-        
-        <span>Background color:</span>
-        <select id="background">
-          <option value="Red">Red</option>
-          <option value="Green">Green</option>
-          <option value="Blue">Blue</option>
+<head>
+    <title>Robot dressroom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div>
+        <span>Antenna length</span>
+        <select id="antenna">
+            <option value=10>Short</option>
+            <option value=20>Medium</option>
+            <option value=30>Long</option>
         </select>
-        
-        <span>Width:</span>
-        <select id="width">
-          <option value="100px">100px</option>
-          <option value="200px">200px</option>
-          <option value="300px">300px</option>
+
+        <span>Color</span>
+        <select id="color">
+            <option value="grey">Grey</option>
+            <option value="gold">Gold</option>
+            <option value="purple">Purple</option>
         </select>
-        
-        <span>Height:</span>
-        <select id="height">
-          <option value="100px">100px</option>
-          <option value="200px">200px</option>
-          <option value="300px">300px</option>
+
+        <span>Greeting</span>
+        <select id="greeting">
+            <option></option>
+            <option></option>
+            <option></option>
         </select>
-        
-        <br/><br/>
-        
-        <div id="content" style="background:red; width:100px; height:100px;"></div>
-        
-        <script src="script.js"></script>
-        
-    </body>
+    </div>
+    
+    <canvas id="canvas" width="400" height="400"></canvas>
+    
+    <script src="js/main.js"></script>
+</body>
 </html>
