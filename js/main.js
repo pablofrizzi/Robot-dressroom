@@ -1,16 +1,11 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-var selectMenu = document.getElementById('menu');
 var color = document.getElementById('color');
 var antenna = document.getElementById('antenna');
 var greeting = document.getElementById('greeting');
 
-var bodyColor = 'grey';
-var antennaLength = 10;
-var greetingText = '...' ;
-
-function redrawRobot() {
+function redrawRobot(bodyColor, antennaLength, greetingText) {
     
 //    draw text
     ctx.fillStyle = 'black';
@@ -55,34 +50,23 @@ function redrawRobot() {
  
 }
 
-function changeStyleEventHandler(event) {
-    if (event.target === color ) {
-        
-        bodyColor = color.value;
-        
-    } else if (event.target === antenna) {
-        
-        antennaLength = antenna.value; 
-        
-    } else if (event.target === greeting) {
-        
-        greetingText = greeting.value; 
-        
-    }
-    
+function changeStyleEventListener() {
+
     ctx.clearRect(0, 0, 400, 400);
-    redrawRobot();
+    redrawRobot(color.value, antenna.value, greeting.value);
     
 }
 
-function eventListener() {
-    selectMenu.addEventListener('change', changeStyleEventHandler);
+function addEventListener() {
+    
+    document.getElementById('menu').addEventListener('change', changeStyleEventListener);
+    
 }
 
 function load() {
    
-    redrawRobot();
-    eventListener();
+    redrawRobot(color.value, antenna.value, greeting.value);
+    addEventListener();
     
 }
 
