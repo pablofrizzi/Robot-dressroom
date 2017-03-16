@@ -4,11 +4,19 @@ var ctx = canvas.getContext('2d');
 var selectMenu = document.getElementById('menu');
 var color = document.getElementById('color');
 var antenna = document.getElementById('antenna');
+var greeting = document.getElementById('greeting');
 
 var bodyColor = 'grey';
 var antennaLength = 10;
+var greetingText = '...' ;
 
 function redrawRobot() {
+    
+//    draw text
+    ctx.fillStyle = 'black';
+    ctx.font = '18px "Courier New"';
+    ctx.textAlign = 'center';
+    ctx.fillText(greetingText, canvas.width/2, 40);
     
 //    draw boots
     ctx.fillStyle = bodyColor;
@@ -55,6 +63,10 @@ function changeStyleEventHandler(event) {
     } else if (event.target === antenna) {
         
         antennaLength = antenna.value; 
+        
+    } else if (event.target === greeting) {
+        
+        greetingText = greeting.value; 
         
     }
     
