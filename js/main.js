@@ -68,7 +68,7 @@ selectMenu.addEventListener('change', changeStyleEventHandler);
 function load() {
    
     redrawRobot();
-    changeStyle();
+    changeStyleEventHandler();
     
 }
 
