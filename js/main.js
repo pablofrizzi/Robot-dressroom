@@ -75,12 +75,14 @@ function changeStyleEventHandler(event) {
     
 }
 
-selectMenu.addEventListener('change', changeStyleEventHandler);
+function eventListener() {
+    selectMenu.addEventListener('change', changeStyleEventHandler);
+}
 
 function load() {
    
     redrawRobot();
-    changeStyleEventHandler();
+    eventListener();
     
 }
 
