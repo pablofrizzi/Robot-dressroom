@@ -6,7 +6,7 @@ var color = document.getElementById('color');
 var antenna = document.getElementById('antenna');
 
 var bodyColor = 'grey';
-var antennaLength = 0;
+var antennaLength = 10;
 
 function redrawRobot() {
     
@@ -34,7 +34,7 @@ function redrawRobot() {
     
 //    antennas
     ctx.fillStyle = 'black';
-    ctx.fillRect(canvas.width/2 - 2, 80 - antennaLength, 4, 30 + antennaLength);
+    ctx.fillRect(canvas.width/2 - 2, 110 - antennaLength, 4, antennaLength);
       
 //    draw mouth
     ctx.fillRect(canvas.width/2 - 15, 145, 30, 5);
