@@ -47,7 +47,7 @@ function redrawRobot() {
  
 }
 
-function changeStyle(event) {
+function changeStyleEventHandler(event) {
     if (event.target === color ) {
         
         bodyColor = color.value;
@@ -63,7 +63,7 @@ function changeStyle(event) {
     
 }
 
-selectMenu.addEventListener('change', changeStyle);
+selectMenu.addEventListener('change', changeStyleEventHandler);
 
 function load() {
    
