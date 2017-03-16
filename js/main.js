@@ -1,12 +1,14 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+var selectMenu = document.getElementById('menu');
+var color = document.getElementById('color');
+var antenna = document.getElementById('antenna');
+
 var bodyColor = 'grey';
-var antenna = 0;
+var antennaLength = 0;
 
-
-
-function drawRobot() {
+function redrawRobot() {
     
 //    draw boots
     ctx.fillStyle = bodyColor;
@@ -32,7 +34,7 @@ function drawRobot() {
     
 //    antennas
     ctx.fillStyle = 'black';
-    ctx.fillRect(canvas.width/2 - 2, 80 - antenna, 4, 30 + antenna);
+    ctx.fillRect(canvas.width/2 - 2, 80 - antennaLength, 4, 30 + antennaLength);
       
 //    draw mouth
     ctx.fillRect(canvas.width/2 - 15, 145, 30, 5);
@@ -45,11 +47,28 @@ function drawRobot() {
  
 }
 
+function changeStyle(event) {
+    if (event.target === color ) {
+        
+        bodyColor = color.value;
+        
+    } else if (event.target === antenna) {
+        
+        antennaLength = antenna.value; 
+        
+    }
+    
+    ctx.clearRect(0, 0, 400, 400);
+    redrawRobot();
+    
+}
 
+selectMenu.addEventListener('change', changeStyle);
 
 function load() {
    
-    drawRobot();
+    redrawRobot();
+    changeStyle();
     
 }
 
