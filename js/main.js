@@ -1,3 +1,12 @@
+window.onload = load;
+
+function load() {
+   
+    redrawRobot(color.value, antenna.value, greeting.value);
+    addEventListener();
+    
+}
+
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
@@ -13,8 +22,10 @@ function redrawRobot(bodyColor, antennaLength, greetingText) {
     ctx.textAlign = 'center';
     ctx.fillText(greetingText, canvas.width/2, 40);
     
+//    main color
+    ctx.fillStyle = bodyColor; 
+    
 //    draw boots
-    ctx.fillStyle = bodyColor;
     ctx.fillRect(canvas.width/2 - 45, canvas.height - 10, 30, 10);
     ctx.fillRect(canvas.width/2 + 15, canvas.height - 10, 30, 10);
     
@@ -62,12 +73,3 @@ function addEventListener() {
     document.getElementById('menu').addEventListener('change', changeStyleEventListener);
     
 }
-
-function load() {
-   
-    redrawRobot(color.value, antenna.value, greeting.value);
-    addEventListener();
-    
-}
-
-window.onload = load;
